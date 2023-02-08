@@ -18,8 +18,22 @@ function openDBConnection(){
     try {
         $tempDBConnexion = new PDO($dsn, $userName, $userPad);
     }
-    catch (PDOException){
+    catch (PDOException $exception){
         echo 'Connection failed'.$exception->getMessage();
     }
     return $tempDBConnexion;
+}
+
+// function to exexute query Select
+function executeQuerySelect($query){
+    $queryResult = null;
+
+    $dbConnection= openDBConnection(); // Ouvre la connexion a la BD
+    if ($dbConnection != null){
+        $statement = $dbConnection->prepare($query); // Préparation de la requète
+        $statement->execute(); // Exécution de la requète
+        $queryResult = $statement->fetchAll(); // Prépare les résultats de la requète pour afficher
+    }
+    $dbConnection = null; // fermeture de la connexion à la DB
+    return $queryResult;
 }
