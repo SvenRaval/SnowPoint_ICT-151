@@ -8,10 +8,10 @@
 function displayArticles(){
     try {
         require_once 'model/articlesManager.php';
-        $article = getArticles();
+        $articles = getArticles();
     }catch (ModelDataBaseException $ex){
         $articleErrorMessage = 'Nous rencontrons des problèmes';
     } finally {
-        require "view/articles.php";
+        require "./view/article.php";
     }
 }
