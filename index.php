@@ -9,6 +9,7 @@
 require "controller/navigation.php";
 require 'controller/article.php';
 
+
 //Test if there is query of display a specific page
 if (isset($_GET['action'])) {
     $action = $_GET['action'];

@@ -15,3 +15,23 @@ function displayArticles(){
         require "./view/article.php";
     }
 }
+
+/**
+ * @param $articleId
+ * @return void
+ */
+function displayArticleDetail($articleId)
+{
+
+    if (isset($articleId))
+    {
+        try{
+            require_once "model/articlesManager.php";
+            $articleDetailToDisplay = getArticleDetail($articleId);
+        } catch (ModelDataBaseException $ex) {
+            $articleDetailErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher le détail de ce produit. Désolé du dérangement !";
+        } finally {
+            require "view/article-detail.php";
+        }
+    }
+}
