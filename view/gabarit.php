@@ -80,7 +80,7 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-                                <a href="index.php">Home</a></li>
+                                <a href="index.php?action=home">Home</a></li>
                             <li><a href="index.php?action=displayArticle">Nos Snows</a></li>
 								<ul class="sub_menu">
 									<li><a href="view/content/index.html">Homepage V1</a></li>

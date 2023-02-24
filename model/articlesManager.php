@@ -8,7 +8,7 @@
 function getArticles(){
     require 'model/dbConnector.php';
 
-    $snowQuery="SELECT code, brand, model, snowLength, price, photo, active FROM snows;";
+    $snowQuery="SELECT code, brand, model, snowLength, qtyAvailable, price, photo, active FROM snows;";
 
     $results = executeQuerySelect($snowQuery);
     return $results;
