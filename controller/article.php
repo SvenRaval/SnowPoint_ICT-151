@@ -12,7 +12,7 @@ function displayArticles(){
     }catch (ModelDataBaseException $ex){
         $articleErrorMessage = 'Nous rencontrons des problèmes';
     } finally {
-        require "./view/article.php";
+        require "view/article.php";
     }
 }
 
@@ -26,7 +26,7 @@ function displayArticlesAdmin(){
     }catch (ModelDataBaseException $ex){
         $articleErrorMessage = 'Nous rencontrons des problèmes';
     } finally {
-        require "./view/articleAdmin.php";
+        require "view/articleAdmin.php";
     }
 }
 
@@ -45,7 +45,7 @@ function displayArticleDetail($articleId)
         } catch (ModelDataBaseException $ex) {
             $articleDetailErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher le détail de ce produit. Désolé du dérangement !";
         } finally {
-            require "view/article-detail.php";
+            require "view/article-details.php";
         }
     }
 }

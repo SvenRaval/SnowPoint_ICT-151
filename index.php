@@ -23,6 +23,9 @@ if (isset($_GET['action'])) {
         case 'displayArticleAdmin':
             displayArticlesAdmin();
             break;
+        case 'displayArticleDetail':
+            displayArticleDetail($_GET['articleId']);
+            break;
         default:
             lost();
     }
