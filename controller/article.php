@@ -17,6 +17,20 @@ function displayArticles(){
 }
 
 /**
+ * @return void
+ */
+function displayArticlesAdmin(){
+    try {
+        require_once'model/articlesManager.php';
+        $articles = getArticles();
+    }catch (ModelDataBaseException $ex){
+        $articleErrorMessage = 'Nous rencontrons des problèmes';
+    } finally {
+        require "./view/articleAdmin.php";
+    }
+}
+
+/**
  * @param $articleId
  * @return void
  */

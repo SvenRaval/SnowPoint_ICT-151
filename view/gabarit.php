@@ -1,11 +1,11 @@
-
+<?php
 /**
  * @file    gabarit.php
  * @brief   File Description
  * @author  Created by Sven Raval
  * @version 01.02.2023
  */
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,6 +82,9 @@
 							<li>
                                 <a href="index.php?action=home">Home</a></li>
                             <li><a href="index.php?action=displayArticle">Nos Snows</a></li>
+                            <li>
+                                <a href="index.php?action=displayArticleAdmin">Gestion</a>
+                            </li>
 								<ul class="sub_menu">
 									<li><a href="view/content/index.html">Homepage V1</a></li>
 									<li><a href="view/content/home-02.html">Homepage V2</a></li>

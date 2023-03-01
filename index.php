@@ -2,7 +2,7 @@
 /**
  * @file    index.php
  * @brief   File Description
- * @author  Created by Daniel.CHEVALLEY
+ * @author  Created by Sven.RAVAL
  * @version 01.02.2023
  */
 
@@ -19,6 +19,9 @@ if (isset($_GET['action'])) {
             break;
         case 'displayArticle':
             displayArticles();
+            break;
+        case 'displayArticleAdmin':
+            displayArticlesAdmin();
             break;
         default:
             lost();
