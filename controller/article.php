@@ -49,3 +49,13 @@ function displayArticleDetail($articleId)
         }
     }
 }
+function ArticleAddItem(){
+    try {
+        require_once 'model/articlesManager.php';
+        $articles = getArticles();
+    }catch (ModelDataBaseException $ex){
+        $articleErrorMessage = 'Nous rencontrons des problèmes';
+    } finally {
+        require "view/ArticleCreate.php";
+    }
+}

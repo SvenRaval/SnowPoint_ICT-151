@@ -41,7 +41,7 @@ ob_start();
                                             <th class="column-2">Longueur</th>
                                             <th class="column-2">Prix à l'unité</th>
                                             <th class="column-2">Quantité</th>
-                                            <th class="column-2"><a href="index.php?action=articleAddItem"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                            <th class="column-2"><a href="index.php?action=ArticleAddItem"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         Ajouter
                                                     </button></a></th>
                                         </tr>
