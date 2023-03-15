@@ -27,7 +27,7 @@ if (isset($_GET['action'])) {
             displayArticleDetail($_GET['articleId']);
             break;
         case 'ArticleAddItem':
-            ArticleAddItem();
+            ArticleAddItem($_POST);
             break;
         default:
             lost();
