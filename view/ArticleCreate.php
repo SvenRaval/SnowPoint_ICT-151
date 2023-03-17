@@ -29,39 +29,39 @@ ob_start();
                     </h4>
 
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputArticleCode" placeholder="Code de l'article">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputArticleCode" placeholder="Code de l'article" value="<?= @$_POST['InputArticleCode']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputMarque" placeholder="Marque de l'article">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputMarque" placeholder="Marque de l'article" value="<?= @$_POST['InputMarque']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputModele" placeholder="Modèle de l'article">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputModele" placeholder="Modèle de l'article" value="<?= @$_POST['InputModele']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputDescription" placeholder="Description de l'article">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputDescription" placeholder="Description de l'article" value="<?= @$_POST['InputDescription']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputLongeur" placeholder="Longeur de l'article">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputLongeur" placeholder="Longeur de l'article" value="<?= @$_POST['InputLongeur']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputNiveau" placeholder="Niveau requis">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputNiveau" placeholder="Niveau requis" value="<?= @$_POST['InputNiveau']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputPrix" placeholder="Prix">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputPrix" placeholder="Prix" value="<?= @$_POST['InputPrix']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputQty" placeholder="quantité">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" name="InputQty" placeholder="quantité" value="<?= @$_POST['InputQty']?>">
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20" id="genreRadio">&emsp;&emsp;
-                        <input type="radio" class="form-check-input" id="radio1" name="radioGenre" value="Homme">
+                        <input type="radio" class="form-check-input" id="radio1" name="radioGenre" value="Homme" value="<?= @$_POST['radioGenre']?>">
                         <label class="form-check-label" for="radio1">Homme </label>&emsp;&emsp;&emsp;
-                        <input type="radio" class="form-check-input" id="radio2" name="radioGenre" value="Femme">
+                        <input type="radio" class="form-check-input" id="radio2" name="radioGenre" value="Femme" value="<?= @$_POST['radioGenre']?>">
                         <label class="form-check-label" for="radio2">Femme</label>&emsp;&emsp;&emsp;
-                        <input type="radio" class="form-check-input" id="radio3" name="radioGenre" value="Enfant">
+                        <input type="radio" class="form-check-input" id="radio3" name="radioGenre" value="Enfant" value="<?= @$_POST['radioGenre']?>">
                         <label class="form-check-label" for="radio2">Enfant</label>
                     </div>
                     <div class="bo4 of-hidden size15 m-b-20">
-                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputDescComp" placeholder="Description Complète">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="InputDescComp" placeholder="Description Complète" value="<?= @$_POST['InputDescComp']?>">
                     </div>
                     <input type="submit" value="Ajouter" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4" ><br>
                     <input type="reset" value="Annuler" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">

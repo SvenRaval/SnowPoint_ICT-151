@@ -70,3 +70,7 @@ function ArticleAddItem($addItem){
             require "view/ArticleCreate.php";
         }
 }
+function RemoveArticle(){
+    require "model/articlesManager.php";
+    RemoveArticleQuery();
+}

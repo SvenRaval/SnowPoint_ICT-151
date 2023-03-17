@@ -8,6 +8,7 @@
 
 require "controller/navigation.php";
 require 'controller/article.php';
+session_start();
 
 
 //Test if there is query of display a specific page
@@ -28,6 +29,9 @@ if (isset($_GET['action'])) {
             break;
         case 'ArticleAddItem':
             ArticleAddItem($_POST);
+            break;
+        case 'articleRemoveItemCode':
+            RemoveArticle();
             break;
         default:
             lost();

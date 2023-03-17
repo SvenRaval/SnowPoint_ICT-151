@@ -51,10 +51,10 @@ ob_start();
                                                 <td class="column-1"><?=$article['code'];?></td>
                                                 <td class="column-2">
                                                     <div class="cart-img-product b-rad-4 o-f-hidden">
-                                                        <?php if (is_file($article['photo'])) : ?>
+                                                        <?php if (isset($article['photo'])) : ?>
                                                             <img src="<?=$article['photo']; ?>" alt="<?= $article['code']; ?>" alt="IMG-PRODUCT">
                                                         <?php else : ?>
-                                                            <img src="view/content/images/no_image_snow_small.png" alt="no image" alt="IMG-PRODUCT">
+                                                            <img src="view/content/images/no_image_snow_small.png" alt="no image" alt="IMG-PRODUCT-NO-IMAGE">
                                                         <?php endif; ?>
                                                     </div>
                                                 </td>
@@ -64,7 +64,7 @@ ob_start();
                                                 <td class="column-2"><?=$article['qtyAvailable']; ?></td>
 
                                                 <td class="column-2">
-                                                    <a href="index.php?action=articleRemoveItem&code=<?=$article['code'];?>" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    <a <?= $_SESSION['codeDelete'] = $article['code']?> href="index.php?action=articleRemoveItemCode" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         <img src="view/content/images/icons/bin2.png" alt="delete">
                                                         </button></a><br>
                                                     <a href="index.php?action=articleUpdateItem&code=<?=$article['code'];?>">
