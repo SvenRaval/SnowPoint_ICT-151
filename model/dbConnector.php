@@ -5,7 +5,8 @@
  * @author Created by Sven.RAVAL
  * @version 08.02.2023
  */
-function openDBConnection(){
+function openDBConnection()
+{
     $sqlDriver = 'mysql';
     $hostname = 'localhost';
     $port = '3307';
@@ -13,23 +14,23 @@ function openDBConnection(){
     $dbName = 'snows';
     $userName = 'RAVAL';
     $userPad = 'Rc9Pry';
-    $dsn = $sqlDriver.':host='.$hostname.';dbname='.$dbName.';port='.$port.';charset='.$charset;
+    $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try {
         $tempDBConnexion = new PDO($dsn, $userName, $userPad);
-    }
-    catch (PDOException $exception){
-        echo 'Connection failed'.$exception->getMessage();
+    } catch (PDOException $exception) {
+        echo 'Connection failed' . $exception->getMessage();
     }
     return $tempDBConnexion;
 }
 
 // function to exexute query Select
-function executeQuerySelect($query){
+function executeQuerySelect($query)
+{
     $queryResult = null;
 
-    $dbConnection= openDBConnection(); // Ouvre la connexion a la BD
-    if ($dbConnection != null){
+    $dbConnection = openDBConnection(); // Ouvre la connexion a la BD
+    if ($dbConnection != null) {
         $statement = $dbConnection->prepare($query); // Préparation de la requète
         $statement->execute(); // Exécution de la requète
         $queryResult = $statement->fetchAll(); // Prépare les résultats de la requète pour afficher
@@ -37,11 +38,13 @@ function executeQuerySelect($query){
     $dbConnection = null; // fermeture de la connexion à la DB
     return $queryResult;
 }
-function executeQueryNotSelect($query){
+
+function executeQueryNotSelect($query)
+{
     $queryResult = null;
 
-    $dbConnection= openDBConnection(); // Ouvre la connexion a la BD
-    if ($dbConnection!= null){
+    $dbConnection = openDBConnection(); // Ouvre la connexion a la BD
+    if ($dbConnection != null) {
         $statement = $dbConnection->prepare($query); // Préparation de la requète
         $queryResult = $statement->execute(); // Exécution de la requète
     }

@@ -22,6 +22,7 @@ function getArticlesNoConnection()
     $results = executeQuerySelect($snowQuery);
     return $results;
 }
+
 function getArticleDetail($articleId)
 {
     $strgSeparator = '\'';
@@ -46,23 +47,25 @@ function ArticleAddItemQuery($inputArticleCode, $inputMarque, $inputModel, $inpu
     $selectCodeCheck = "SELECT code FROM snows WHERE code ='$code';";
     require 'model/dbConnector.php';
     $check = executeQuerySelect($selectCodeCheck);
-    if ($check != null){
+    if ($check != null) {
         require "view/ArticleCreate.php";
         echo '<script type="text/javascript">window.alert("Le code saisi est déjà utilisé, veuillez en saisir un non utilisé");</script>';
-    }else{
+    } else {
         executeQueryNotSelect($queryAddArticle);
         require_once 'view/articleAdmin.php';
     }
 }
-function RemoveArticleQuery(){
+
+function RemoveArticleQuery()
+{
     $code = $_SESSION['codeDelete'];
     $queryRemoveArticle = "DELETE FROM snows WHERE code ='$code'";
     require 'model/dbConnector.php';
     executeQueryNotSelect($queryRemoveArticle);
     try {
-        require_once'model/articlesManager.php';
+        require_once 'model/articlesManager.php';
         $articles = getArticlesNoConnection();
-    }catch (ModelDataBaseException $ex){
+    } catch (ModelDataBaseException $ex) {
         $articleErrorMessage = 'Nous rencontrons des problèmes';
     } finally {
         require "view/articleAdmin.php";

@@ -12,7 +12,8 @@ ob_start();
 ?>
 
     <!-- Title Page -->
-    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);">
+    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m"
+             style="background-image: url(view/content/images/home_slide_2.jpg);">
         <h2 class="l-text2 t-center">
             Gestion des articles
         </h2>
@@ -41,36 +42,45 @@ ob_start();
                                             <th class="column-2">Longueur</th>
                                             <th class="column-2">Prix à l'unité</th>
                                             <th class="column-2">Quantité</th>
-                                            <th class="column-2"><a href="index.php?action=ArticleAddItem"><button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                            <th class="column-2"><a href="index.php?action=ArticleAddItem">
+                                                    <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         Ajouter
-                                                    </button></a></th>
+                                                    </button>
+                                                </a></th>
                                         </tr>
                                         <?php foreach ($articles as $article) : ?>
 
                                             <tr id="B101" class="table-row">
-                                                <td class="column-1"><?=$article['code'];?></td>
+                                                <td class="column-1"><?= $article['code']; ?></td>
                                                 <td class="column-2">
                                                     <div class="cart-img-product b-rad-4 o-f-hidden">
                                                         <?php if (isset($article['photo'])) : ?>
-                                                            <img src="<?=$article['photo']; ?>" alt="<?= $article['code']; ?>" alt="IMG-PRODUCT">
+                                                            <img src="<?= $article['photo']; ?>"
+                                                                 alt="<?= $article['code']; ?>" alt="IMG-PRODUCT">
                                                         <?php else : ?>
-                                                            <img src="view/content/images/no_image_snow_small.png" alt="no image" alt="IMG-PRODUCT-NO-IMAGE">
+                                                            <img src="view/content/images/no_image_snow_small.png"
+                                                                 alt="no image" alt="IMG-PRODUCT-NO-IMAGE">
                                                         <?php endif; ?>
                                                     </div>
                                                 </td>
-                                                <td class="column-2"><?=$article['model']; ?></td>
-                                                <td class="column-2"><?=$article['snowLength']; ?> cm</td>
-                                                <td class="column-2"><?=$article['price']; ?> CHF</td>
-                                                <td class="column-2"><?=$article['qtyAvailable']; ?></td>
+                                                <td class="column-2"><?= $article['model']; ?></td>
+                                                <td class="column-2"><?= $article['snowLength']; ?> cm</td>
+                                                <td class="column-2"><?= $article['price']; ?> CHF</td>
+                                                <td class="column-2"><?= $article['qtyAvailable']; ?></td>
 
                                                 <td class="column-2">
-                                                    <a <?= $_SESSION['codeDelete'] = $article['code']?> href="index.php?action=articleRemoveItemCode" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    <a <?= $_SESSION['codeDelete'] = $article['code'] ?>
+                                                            href="index.php?action=articleRemoveItemCode"
+                                                            class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         <img src="view/content/images/icons/bin2.png" alt="delete">
                                                         </button></a><br>
-                                                    <a href="index.php?action=articleUpdateItem&code=<?=$article['code'];?>">
-                                                        <button onclick="updateItem('<?=$article['code']; ?>')" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                            <img src="view/content/images/icons/pencil2.png" alt="update">
-                                                        </button></a>
+                                                    <a href="index.php?action=articleUpdateItem&code=<?= $article['code']; ?>">
+                                                        <button onclick="updateItem('<?= $article['code']; ?>')"
+                                                                class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                            <img src="view/content/images/icons/pencil2.png"
+                                                                 alt="update">
+                                                        </button>
+                                                    </a>
                                                 </td>
                                             </tr>
                                             <!-- End of list item -->

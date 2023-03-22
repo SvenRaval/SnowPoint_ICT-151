@@ -6,7 +6,7 @@
  * @version 24.02.2023
  */
 require_once "controller/article.php";
-$title="SnowPoint - Détail du produit";
+$title = "SnowPoint - Détail du produit";
 
 ob_start();
 ?>
@@ -20,8 +20,9 @@ ob_start();
         <div class="wrap-slick3 flex-sb flex-w">
             <div class="slick3">
                 <div class="wrap-pic-w">
-                    <?php if(is_file("view/content/images/men_snows/".$articleDetailToDisplay['code'].".jpg")): ?>
-                        <img src="view/content/images/men_snows/<?=$articleDetailToDisplay['code']; ?>.jpg" alt="IMG-PRODUCT">
+                    <?php if (is_file("view/content/images/men_snows/" . $articleDetailToDisplay['code'] . ".jpg")): ?>
+                        <img src="view/content/images/men_snows/<?= $articleDetailToDisplay['code']; ?>.jpg"
+                             alt="IMG-PRODUCT">
                     <?php else: ?>
                         <img src="view/content/images/no_image_snow.png" alt="IMG-PRODUCT">
                     <?php endif; ?>
@@ -31,25 +32,26 @@ ob_start();
     </div>
     <div class="w-size14 p-t-30 respon5">
         <h4 class="product-detail-name m-text16 p-b-13">
-            <?=$articleDetailToDisplay['brand'] . "-" . $articleDetailToDisplay['model']; ?>
+            <?= $articleDetailToDisplay['brand'] . "-" . $articleDetailToDisplay['model']; ?>
         </h4>
 
         <span class="m-text17">
-					Prix : <?=$articleDetailToDisplay['price']; ?> .-
+					Prix : <?= $articleDetailToDisplay['price']; ?> .-
             </span>
 
         <p class="s-text8 p-t-10">
-            <?=$articleDetailToDisplay['description']; ?>
+            <?= $articleDetailToDisplay['description']; ?>
         </p>
 
         <!--  -->
         <div class="p-t-33 p-b-60">
-            <form action="index.php?action=cartAddItem" method="post" >
+            <form action="index.php?action=cartAddItem" method="post">
                 <div class="flex-m flex-w p-b-10">
                     <div class="s-text15 w-size15 t-center">
                         Code
                     </div>
-                    <input readonly type="text" name="inputUserArticleId" value="<?php echo $articleDetailToDisplay['code']; ?>">
+                    <input readonly type="text" name="inputUserArticleId"
+                           value="<?php echo $articleDetailToDisplay['code']; ?>">
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16"></div>
                 </div>
 
@@ -58,7 +60,7 @@ ob_start();
                     <div class="s-text15 w-size15 t-center">
                         Longueur
                     </div>
-                    <?=$articleDetailToDisplay['snowLength']; ?> cm
+                    <?= $articleDetailToDisplay['snowLength']; ?> cm
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16"></div>
                 </div>
 
@@ -66,7 +68,7 @@ ob_start();
                     <div class="s-text15 w-size15 t-center">
                         Niveau
                     </div>
-                    <?=$articleDetailToDisplay['level']; ?>
+                    <?= $articleDetailToDisplay['level']; ?>
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16"></div>
                 </div>
 
@@ -77,7 +79,8 @@ ob_start();
                                 <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                             </button>
 
-                            <input class="size8 m-text18 t-center num-product" type="number" name="inputUserQuantityToAdd" value="1">
+                            <input class="size8 m-text18 t-center num-product" type="number"
+                                   name="inputUserQuantityToAdd" value="1">
 
                             <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
                                 <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
@@ -107,7 +110,7 @@ ob_start();
 
             <div class="dropdown-content dis-none p-t-15 p-b-23">
                 <p class="s-text8">
-                    <?=$articleDetailToDisplay['descriptionFull']; ?>
+                    <?= $articleDetailToDisplay['descriptionFull']; ?>
                 </p>
             </div>
         </div>

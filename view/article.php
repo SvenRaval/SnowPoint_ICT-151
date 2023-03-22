@@ -6,13 +6,14 @@
  * @version 08.02.2023
  */
 require_once "controller/article.php";
-$title ="SnowPoint - Nos snows";
+$title = "SnowPoint - Nos snows";
 ob_start();
 ?>
 
 
     <!-- Title Page -->
-    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);">
+    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m"
+             style="background-image: url(view/content/images/home_slide_2.jpg);">
         <h2 class="l-text2 t-center">
             Nos snows
         </h2>
@@ -36,10 +37,10 @@ ob_start();
 
 
                                     <?php // test if page number exists to know if it's the first page
-                                    if(!isset($_GET['page'])) : ?>
+                                    if (!isset($_GET['page'])) : ?>
 
                                         <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                            <?php if(is_file($article['photo'])) : ?>
+                                            <?php if (is_file($article['photo'])) : ?>
                                                 <img src="<?= $article['photo']; ?>" alt="<?= $article['code']; ?>">
                                             <?php else : ?>
                                                 <img src="view/content/images/no_image_snow_small.png" alt="no image">
@@ -52,11 +53,15 @@ ob_start();
                                                 </a>
 
                                                 <div class="block2-btn-addcart w-size1 trans-0-4">
-                                                    <form action="index.php?action=cartAddItem" method="post" >
+                                                    <form action="index.php?action=cartAddItem" method="post">
                                                         <!-- Button -->
-                                                        <button type="submit" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                            <input readonly type="hidden" type="text" name="inputUserArticleId" value="<?php echo $article['code']; ?>">
-                                                            <input readonly type="hidden" type="text" name="inputUserQuantityToAdd" value="1">
+                                                        <button type="submit"
+                                                                class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                            <input readonly type="hidden" type="text"
+                                                                   name="inputUserArticleId"
+                                                                   value="<?php echo $article['code']; ?>">
+                                                            <input readonly type="hidden" type="text"
+                                                                   name="inputUserQuantityToAdd" value="1">
                                                             Ajouter au panier
                                                             </a>
                                                         </button>
@@ -66,7 +71,8 @@ ob_start();
                                         </div>
 
                                         <div class="block2-txt p-t-20">
-                                            <a href="index.php?action=displayArticleDetail&articleId=<?= $article['code']; ?>" class="block2-name dis-block s-text3 p-b-5">
+                                            <a href="index.php?action=displayArticleDetail&articleId=<?= $article['code']; ?>"
+                                               class="block2-name dis-block s-text3 p-b-5">
                                                 <strong><?= $article['brand']; ?> <?= $article['model']; ?></strong></a>
                                             <strong>Disponibilité : </strong><?= $article['qtyAvailable']; ?><br>
 
@@ -77,7 +83,8 @@ ob_start();
                                     <?php else: ?>
                                         <div class="block2-txt p-t-20">
 
-                                            <a href="index.php?action=displayArticleDetail&code=<?= $article['code']; ?>" class="block2-name dis-block s-text3 p-b-5">
+                                            <a href="index.php?action=displayArticleDetail&code=<?= $article['code']; ?>"
+                                               class="block2-name dis-block s-text3 p-b-5">
                                                 <strong><?= $article['brand']; ?> <?= $article['model']; ?></strong></a>
                                             <strong>Disponibilité : </strong><?= $article['qtyAvailable']; ?><br>
 

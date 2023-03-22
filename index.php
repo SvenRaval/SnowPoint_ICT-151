@@ -36,7 +36,6 @@ if (isset($_GET['action'])) {
         default:
             lost();
     }
-}
-else{
+} else {
     home();
 }
