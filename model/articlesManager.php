@@ -71,3 +71,10 @@ function RemoveArticleQuery()
         require "view/articleAdmin.php";
     }
 }
+function ArticleUpdateAutoCompleteQuery() {
+    $code = $_SESSION['codeUpdate'];
+    $selectActiveCheck = "SELECT * FROM snows WHERE code ='$code'";
+    require "model/dbConnector.php";
+    executeQuerySelect($selectActiveCheck);
+
+}

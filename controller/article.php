@@ -78,3 +78,18 @@ function RemoveArticle()
     require "model/articlesManager.php";
     RemoveArticleQuery();
 }
+function UpdateArticle()
+{
+    require "model/articlesManager.php";
+    ArticleUpdateAutoCompleteQuery();
+    $inputArticleCode = ArticleUpdateAutoCompleteQuery('code');
+    $inputMarque = $addItem['InputMarque'];
+    $inputModel = $addItem['InputModele'];
+    $inputDescription = $addItem['InputDescription'];
+    $inputLongeur = $addItem['InputLongeur'];
+    $inputNiveau = $addItem['InputNiveau'];
+    $inputPrix = $addItem['InputPrix'];
+    $inputQty = $addItem['InputQty'];
+    $inputLongDesc = $addItem['InputDescComp'];
+    $inputAudience = $addItem["radioGenre"];
+}

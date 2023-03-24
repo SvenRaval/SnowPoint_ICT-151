@@ -33,6 +33,9 @@ if (isset($_GET['action'])) {
         case 'articleRemoveItemCode':
             RemoveArticle();
             break;
+        case 'articleUpdateItem':
+            UpdateArticle();
+            break;
         default:
             lost();
     }

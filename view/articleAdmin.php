@@ -74,7 +74,8 @@ ob_start();
                                                             class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         <img src="view/content/images/icons/bin2.png" alt="delete">
                                                         </button></a><br>
-                                                    <a href="index.php?action=articleUpdateItem&code=<?= $article['code']; ?>">
+                                                    <a <?= $_SESSION['codeUpdate'] = $article['code']?>
+                                                            href="index.php?action=articleUpdateItem">
                                                         <button onclick="updateItem('<?= $article['code']; ?>')"
                                                                 class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                                             <img src="view/content/images/icons/pencil2.png"
