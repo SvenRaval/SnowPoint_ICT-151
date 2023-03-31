@@ -81,27 +81,29 @@
                     <ul class="main_menu">
                         <li>
                             <a href="index.php?action=home">Home</a></li>
-                        <li><a href="index.php?action=displayArticle">Nos Snows</a></li>
                         <li>
-                            <a href="index.php?action=displayArticleAdmin">Gestion</a>
-                        </li>
-                        <ul class="sub_menu">
-                            <li><a href="view/content/index.html">Homepage V1</a></li>
-                            <li><a href="view/content/home-02.html">Homepage V2</a></li>
-                            <li><a href="view/content/home-03.html">Homepage V3</a></li>
-                        </ul>
+                            <a href="index.php?action=displayArticle">Nos snows</a>
                         </li>
 
-                        <li>
-                            <a href="view/content/blog.html">Blog</a>
-                        </li>
+                        <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
+                            <li>
+                                <a href="index.php?action=login">Login</a>
+                            </li>
+                            <li>
+                                <a href="index.php?action=register">S'enregistrer</a>
+                            </li>
+                        <?php else : ?>
+                            <?php if (isset($_SESSION['userType'])) : ?>
+                                <li>
+                                    <a href="index.php?action=displayArticleAdmin">Gestion</a>
+                                </li>
+                            <?php endif;?>
+                            <li>
+                                <a href="index.php?action=logout">Logout</a>
+                            </li>
+                        <?php endif; ?>
 
-                        <li>
-                            <a href="view/content/about.html">About</a>
-                        </li>
 
-                        <li>
-                            <a href="view/content/contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>

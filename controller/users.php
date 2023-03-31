@@ -34,3 +34,9 @@ function login($loginRequest)
         require "view/login.php";
     }
 }
+function logout()
+{
+    $_SESSION = array();
+    session_destroy();
+    require "view/home.php";
+}
