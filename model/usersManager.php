@@ -22,9 +22,6 @@ function isLoginCorrect($userEmailAddress, $userPsw){
     return $result;
 }
 
-function createSession($userEmailAddress){
-    $_SESSION['userEmailAddress'] = $userEmailAddress;
-}
 
 function getUserType($userEmailAddress)
 {
@@ -43,4 +40,8 @@ function getUserType($userEmailAddress)
         $result = 0;   // default customer
     }
     return $result;
+}
+
+function createSession($userEmailAddress){
+    $_SESSION['userEmailAddress'] = $userEmailAddress;
 }

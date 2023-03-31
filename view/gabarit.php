@@ -64,7 +64,9 @@
 
             <div class="topbar-child2">
 					<span class="topbar-email">
-						pascal.benzonana@cpnv.ch
+						<?php if (isset($_SESSION['userEmailAddress'])) :?>
+                        <?=$_SESSION['userEmailAddress']; ?>
+                        <?php endif;?>
 					</span>
             </div>
         </div>
@@ -109,18 +111,28 @@
                 </nav>
             </div>
 
-            <!-- Header Icon -->
             <div class="header-icons">
-                <a href="index.php?action=login" class="header-wrapicon1 dis-block">
-                    <img src="view/content/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
+
+                <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
+                    <a href="index.php?action=login" class="header-wrapicon1 dis-block">
+                        <img src="view/content/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                    </a>
+                <?php else : ?>
+                    <a href="index.php?action=logout" class="header-wrapicon1 dis-block">
+                        <img src="view/content/images/icons/icon-header-01-log.png" class="header-icon1" alt="ICON">
+                    </a>
+                <?php endif;?>
 
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                    <img src="view/content/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown"
-                         alt="ICON">
+                    <img src="view/content/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                     <span class="header-icons-noti">
+							<?php if(isset($_SESSION['cart'])): ?>
+                                <?=$_SESSION['cart']->GetNbOfArticles(); ?>
+                            <?php else : ?>
+                                0
+                            <?php endif; ?>
 						</span>
 
                     <!-- Header cart noti -->
