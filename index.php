@@ -8,6 +8,7 @@
 
 require "controller/navigation.php";
 require 'controller/article.php';
+require 'controller/users.php';
 session_start();
 
 
@@ -36,6 +37,9 @@ if (isset($_GET['action'])) {
         case 'articleUpdateItem':
             UpdateArticle();
             break;
+        case 'login':
+            login($_POST);
+                break;
         default:
             lost();
     }

@@ -101,7 +101,7 @@
                         </li>
 
                         <li>
-                            <a href="view/content/ontact.html">Contact</a>
+                            <a href="view/content/contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -109,7 +109,7 @@
 
             <!-- Header Icon -->
             <div class="header-icons">
-                <a href="#" class="header-wrapicon1 dis-block">
+                <a href="index.php?action=login" class="header-wrapicon1 dis-block">
                     <img src="view/content/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
                 </a>
 

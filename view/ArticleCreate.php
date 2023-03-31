@@ -24,7 +24,7 @@ ob_start();
         <div class="row">
 
             <div class="col-md-12 p-b-30">
-                <form class="leave-comment" action="index.php?action=ArticleAddItem" method="post"> §
+                <form class="leave-comment" action="index.php?action=ArticleAddItem" method="post">
                     <h4 class="m-text26 p-b-36 p-t-15">
                         Nouvel Article
                     </h4>
